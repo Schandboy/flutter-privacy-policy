@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Account — Ludo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface-hover: #222531;
+    --border: #2a2d3a;
+    --text: #e8e9ed;
+    --text-muted: #8b8fa3;
+    --accent: #ef4444;
+    --accent-hover: #dc2626;
+    --accent-soft: rgba(239, 68, 68, 0.08);
+    --accent-border: rgba(239, 68, 68, 0.2);
+    --green: #22c55e;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.25rem;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 580px;
+    width: 100%;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .app-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    font-size: 1.75rem;
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.25);
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  /* Card */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .card p, .card li {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .card ul {
+    list-style: none;
+    margin-top: 0.75rem;
+  }
+
+  .card li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .card li::before {
+    content: '•';
+    position: absolute;
+    left: 0.25rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Warning box */
+  .warning {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .warning p {
+    color: #fca5a5;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  /* Form */
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--accent);
+  }
+
+  textarea { resize: vertical; min-height: 80px; }
+
+  select { cursor: pointer; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b8fa3' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+  }
+
+  select option { background: var(--surface); }
+
+  .btn {
+    width: 100%;
+    padding: 0.85rem;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-danger {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  .btn-danger:hover { background: var(--accent-hover); transform: translateY(-1px); }
+  .btn-danger:active { transform: translateY(0); }
+
+  /* Steps */
+  .steps {
+    counter-reset: step;
+  }
+
+  .step {
+    padding: 0.6rem 0 0.6rem 2.75rem;
+    position: relative;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .step::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* Success state */
+  .success-state {
+    display: none;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .success-state.show { display: block; }
+  .form-state.hide { display: none; }
+
+  .success-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    font-size: 1.5rem;
+  }
+
+  .success-state h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .success-state p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  footer a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="app-icon">🎲</div>
+    <h1>Delete Your Account</h1>
+    <p>Ludo — Account & Data Deletion</p>
+  </div>
+
+  <!-- What gets deleted -->
+  <div class="card">
+    <h2>What data will be deleted?</h2>
+    <p>When you request account deletion, the following data associated with your account will be permanently removed:</p>
+    <ul>
+      <li>Your email address and authentication credentials</li>
+      <li>Game history, match records, and statistics</li>
+      <li>Player rankings and achievement progress</li>
+      <li>In-app purchase records (you will lose premium/ad-free status)</li>
+      <li>Any preferences or settings tied to your account</li>
+    </ul>
+    <div class="warning">
+      <p>⚠️ This action is irreversible. Once your account is deleted, your data cannot be recovered. If you purchased ad-free access, you will need to purchase it again with a new account.</p>
+    </div>
+  </div>
+
+  <!-- How to delete -->
+  <div class="card">
+    <h2>How to delete your account</h2>
+    <p style="margin-bottom: 0.75rem;">You can delete your account using either method:</p>
+
+    <h2 style="font-size: 0.95rem; margin-top: 1rem;">Option 1: In-App</h2>
+    <div class="steps">
+      <div class="step">Open the Ludo app</div>
+      <div class="step">Go to Settings → Account</div>
+      <div class="step">Tap "Delete Account"</div>
+      <div class="step">Confirm deletion when prompted</div>
+    </div>
+
+    <h2 style="font-size: 0.95rem; margin-top: 1.5rem;">Option 2: Submit a request below</h2>
+    <p>If you cannot access the app, use the form below.</p>
+  </div>
+
+  <!-- Request form -->
+  <div class="card">
+    <div class="form-state">
+      <h2>Request Account Deletion</h2>
+      <p style="margin-bottom: 1.5rem;">We will process your request within 7 business days.</p>
+
+      <div class="form-group">
+        <label for="email">Email address associated with your account *</label>
+        <input type="email" id="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Reason for deletion (optional)</label>
+        <select id="reason">
+          <option value="">Select a reason...</option>
+          <option value="no-longer-use">I no longer use the app</option>
+          <option value="privacy">Privacy concerns</option>
+          <option value="too-many-ads">Too many ads</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Additional comments (optional)</label>
+        <textarea id="comments" placeholder="Any additional information..."></textarea>
+      </div>
+
+      <button class="btn btn-danger" onclick="submitRequest()">
+        Permanently Delete My Account
+      </button>
+    </div>
+
+    <div class="success-state">
+      <div class="success-icon">✓</div>
+      <h2>Request Submitted</h2>
+      <p>We've received your account deletion request. Your account and all associated data will be deleted within <strong>7 business days</strong>. You'll receive a confirmation email once the process is complete.</p>
+    </div>
+  </div>
+
+  <!-- Data retention -->
+  <div class="card">
+    <h2>Data Retention Policy</h2>
+    <p>After account deletion is processed:</p>
+    <ul>
+      <li>All personal data is permanently deleted within 7 business days</li>
+      <li>Anonymized, aggregated analytics data may be retained (not linked to your identity)</li>
+      <li>Data required by law may be retained for the legally mandated period</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>Ludo by Susan Chikanbanjar · <a href="mailto:scbtechsolution@gmail.com">Contact Support</a></p>
+    <p style="margin-top: 0.35rem;">Last updated: May 2026</p>
+  </footer>
+
+</div>
+
+<script>
+function submitRequest() {
+  const email = document.getElementById('email');
+
+  if (!email.value || !email.value.includes('@')) {
+    email.style.borderColor = '#ef4444';
+    email.focus();
+    return;
+  }
+
+  document.querySelector('.form-state').classList.add('hide');
+  document.querySelector('.success-state').classList.add('show');
+}
+</script>
+
+</body>
+</html>
