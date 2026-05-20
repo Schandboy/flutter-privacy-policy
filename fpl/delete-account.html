@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account — FPL App</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafaf8;
+      --text: #1a1a1a;
+      --text-muted: #5c5c5c;
+      --accent: #1b6b3a;
+      --accent-light: #e8f5ee;
+      --border: #e0ddd8;
+      --card-bg: #ffffff;
+      --section-num: #c4c0b8;
+      --danger: #c0392b;
+      --danger-light: #fdecea;
+      --danger-border: #e6a19a;
+    }
+ 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+ 
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+ 
+    header {
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+ 
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+ 
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+ 
+    .brand-icon svg { width: 20px; height: 20px; fill: #fff; }
+ 
+    .brand-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: var(--text);
+    }
+ 
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+ 
+    header p.subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 540px;
+    }
+ 
+    .section {
+      margin-bottom: 44px;
+    }
+ 
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--text);
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+ 
+    .section h2 .num {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--section-num);
+      min-width: 20px;
+    }
+ 
+    .section p {
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+ 
+    .section ul {
+      margin: 10px 0 16px 20px;
+      color: var(--text);
+    }
+ 
+    .section ul li {
+      margin-bottom: 8px;
+      padding-left: 4px;
+    }
+ 
+    .section ul li::marker {
+      color: var(--accent);
+    }
+ 
+    .warning-box {
+      background: var(--danger-light);
+      border-left: 3px solid var(--danger);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 18px 0;
+      font-size: 14px;
+      color: var(--text);
+    }
+ 
+    .warning-box strong {
+      color: var(--danger);
+    }
+ 
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 18px 0;
+    }
+ 
+    .info-card h3 {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+ 
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      margin: 18px 0;
+      padding: 0;
+    }
+ 
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 16px 16px 16px 56px;
+      margin-bottom: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 15px;
+    }
+ 
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      width: 28px;
+      height: 28px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+ 
+    .highlight-box {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 18px 0;
+      font-size: 14px;
+      color: var(--text);
+    }
+ 
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(27, 107, 58, 0.3);
+      text-underline-offset: 2px;
+      transition: text-decoration-color 0.2s;
+    }
+ 
+    a:hover {
+      text-decoration-color: var(--accent);
+    }
+ 
+    footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+ 
+    @media (max-width: 600px) {
+      .container { padding: 40px 18px 80px; }
+      header h1 { font-size: 28px; }
+      .section h2 { font-size: 19px; }
+      .steps li { padding: 14px 14px 14px 50px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+ 
+    <header>
+      <div class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M12 2a10 10 0 0 1 0 20 10 10 0 0 1 0-20zm0 3l2.5 3.5h-5L12 5zm-5 5h3l-1.5 4H5.5L7 10zm10 0h-3l1.5 4h3L17 10zm-7.5 5h5L12 19l-2.5-4z" fill="#fff"/></svg>
+        </div>
+        <span class="brand-name">FPL App</span>
+      </div>
+      <h1>Delete Your Account</h1>
+      <p class="subtitle">We're sorry to see you go. This page explains how to delete your FPL App account and what happens to your data.</p>
+    </header>
+ 
+    <div class="section" id="s1">
+      <h2><span class="num">01</span> How to Delete Your Account</h2>
+      <p>You can delete your account directly from within the app by following these steps:</p>
+      <ol class="steps">
+        <li>Open the <strong>FPL App</strong> on your device</li>
+        <li>Go to <strong>Settings</strong> (tap the gear icon)</li>
+        <li>Tap <strong>Account</strong></li>
+        <li>Tap <strong>Delete Account</strong></li>
+        <li>Confirm your decision when prompted</li>
+      </ol>
+ 
+      <p>Alternatively, you can request account deletion by emailing us at <a href="mailto:scbtechsolution@gmail.com">scbtechsolution@gmail.com</a> with the subject line <strong>"Delete My Account"</strong> from the email address associated with your account.</p>
+    </div>
+ 
+    <div class="section" id="s2">
+      <h2><span class="num">02</span> What Data Gets Deleted</h2>
+      <p>When you delete your account, the following data will be permanently removed from our systems within 30 days:</p>
+ 
+      <div class="info-card">
+        <h3>Data That Will Be Deleted</h3>
+        <ul>
+          <li>Your email address and display name</li>
+          <li>Your Firebase Authentication credentials</li>
+          <li>Your saved FPL Manager ID and team preferences</li>
+          <li>Your notification preferences and FCM token</li>
+          <li>Any personalization data tied to your account</li>
+        </ul>
+      </div>
+ 
+      <div class="info-card">
+        <h3>Data That May Be Retained</h3>
+        <ul>
+          <li><strong>Aggregated analytics</strong> — anonymized, non-identifiable usage statistics may be retained for app improvement purposes</li>
+          <li><strong>Crash logs</strong> — anonymized diagnostic data may be retained for up to 90 days</li>
+          <li><strong>Legal obligations</strong> — data required to be retained by law will be kept for the legally required period</li>
+        </ul>
+      </div>
+    </div>
+ 
+    <div class="section" id="s3">
+      <h2><span class="num">03</span> Important Things to Know</h2>
+ 
+      <div class="warning-box">
+        <strong>This action is permanent.</strong> Once your account is deleted, it cannot be recovered. You will need to create a new account if you wish to use the app again.
+      </div>
+ 
+      <ul>
+        <li>If you purchased ad-free access via Google Play, your purchase is managed by Google and is not affected by account deletion. You can manage your subscriptions through the Google Play Store.</li>
+        <li>Deleting the app from your device does <strong>not</strong> delete your account. You must follow the steps above to delete your account and associated data.</li>
+        <li>Account deletion requests made via email will be processed within 7 business days. You will receive a confirmation email once the deletion is complete.</li>
+      </ul>
+    </div>
+ 
+    <div class="section" id="s4">
+      <h2><span class="num">04</span> Need Help?</h2>
+      <p>If you have trouble deleting your account or have any questions about your data, please reach out to us:</p>
+      <div class="highlight-box">
+        <strong>Susan Chikanbanjar</strong><br>
+        Email: <a href="mailto:scbtechsolution@gmail.com">scbtechsolution@gmail.com</a><br>
+        Bhaktapur, Nepal
+      </div>
+      <p style="margin-top: 16px; font-size: 14px; color: var(--text-muted);">You can also review our <a href="privacy-policy.html">Privacy Policy</a> for more details on how we handle your data.</p>
+    </div>
+ 
+    <footer>
+      &copy; 2026 Susan Chikanbanjar. All rights reserved.
+    </footer>
+ 
+  </div>
+</body>
+</html>
