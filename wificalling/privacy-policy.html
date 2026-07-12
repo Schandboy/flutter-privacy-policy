@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — WiFi Calling - No Internet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --border: #2a2d3a;
+    --text: #e8e9ed;
+    --text-muted: #8b8fa3;
+    --accent: #3B7FF5;
+    --accent-soft: rgba(59, 127, 245, 0.08);
+    --accent-border: rgba(59, 127, 245, 0.2);
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.25rem;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 640px;
+    width: 100%;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .app-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, #3B7FF5, #22C55E);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    font-size: 1.75rem;
+    box-shadow: 0 8px 32px rgba(59, 127, 245, 0.25);
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .effective-date {
+    display: inline-block;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #93c5fd;
+    margin-top: 0.75rem;
+  }
+
+  /* Sections */
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .section h2 .num {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    color: #93c5fd;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .section p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+
+  .section p:last-child { margin-bottom: 0; }
+
+  .section ul {
+    list-style: none;
+    margin: 0.5rem 0 0.75rem 0;
+  }
+
+  .section li {
+    padding: 0.35rem 0 0.35rem 1.5rem;
+    position: relative;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .section li::before {
+    content: '•';
+    position: absolute;
+    left: 0.25rem;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Data table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0;
+    font-size: 0.85rem;
+  }
+
+  .data-table th {
+    text-align: left;
+    padding: 0.65rem 0.75rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .data-table td {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .data-table tr:nth-child(even) td {
+    background: rgba(255,255,255,0.01);
+  }
+
+  /* Highlight box */
+  .highlight {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0;
+  }
+
+  .highlight p {
+    color: #93c5fd;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .toc h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc a {
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.88rem;
+    padding: 0.3rem 0;
+    transition: color 0.2s;
+  }
+
+  .toc a:hover { color: var(--accent); }
+
+  .toc a span {
+    color: #93c5fd;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+
+  footer a {
+    color: var(--text-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  strong { color: var(--text); font-weight: 600; }
+
+  @media (max-width: 480px) {
+    .section { padding: 1.25rem 1.25rem; }
+    .data-table { font-size: 0.78rem; }
+    .data-table th, .data-table td { padding: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <div class="app-icon">📞</div>
+    <h1>Privacy Policy</h1>
+    <p>WiFi Calling - No Internet</p>
+    <div class="effective-date">Effective: July 12, 2026</div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h3>Contents</h3>
+    <a href="#s1"><span>01</span> Introduction</a>
+    <a href="#s2"><span>02</span> Permissions We Request</a>
+    <a href="#s3"><span>03</span> Data Collection & Usage</a>
+    <a href="#s4"><span>04</span> Third-Party Services & Ads</a>
+    <a href="#s5"><span>05</span> Data Security</a>
+    <a href="#s6"><span>06</span> Children's Privacy</a>
+    <a href="#s7"><span>07</span> Data Retention & Deletion</a>
+    <a href="#s8"><span>08</span> Changes to This Policy</a>
+    <a href="#s9"><span>09</span> Contact Us</a>
+  </div>
+
+  <!-- 1. Introduction -->
+  <div class="section" id="s1">
+    <h2><span class="num">1</span> Introduction</h2>
+    <p><strong>SCB Tech Solution</strong> ("we", "our", or "us") operates the WiFi Calling - No Internet mobile application ("the App"). This Privacy Policy explains our practices regarding your information when you use our App.</p>
+    <p>By downloading or using the App, you agree to the practices described in this policy. If you do not agree, please do not use the App.</p>
+    <div class="highlight">
+      <p><strong>Summary:</strong> This app operates entirely offline over your local Wi-Fi network. We do not collect, store, or transmit your personal data, audio, or video to any external servers.</p>
+    </div>
+  </div>
+
+  <!-- 2. Permissions We Request -->
+  <div class="section" id="s2">
+    <h2><span class="num">2</span> Permissions We Request</h2>
+    <p>To provide core calling functionality, the App requires specific device permissions. These permissions are used strictly locally on your device:</p>
+    
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Permission</th>
+          <th>Why it is needed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Microphone</td>
+          <td>Required to capture your voice during active calls. Audio is only transmitted to the person you are directly calling.</td>
+        </tr>
+        <tr>
+          <td>Camera (Optional)</td>
+          <td>Required only if you choose to scan a QR code to quickly connect with another device on your network.</td>
+        </tr>
+        <tr>
+          <td>Location / Nearby Devices</td>
+          <td>Required by the Android operating system to discover nearby Wi-Fi networks and other devices on your local subnet.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 3. Data Collection & Usage -->
+  <div class="section" id="s3">
+    <h2><span class="num">3</span> Data Collection & Usage</h2>
+    <p><strong>We do not collect any personal data.</strong></p>
+    <ul>
+      <li><strong>Audio and Chat Data:</strong> All voice calls and text chats are transmitted securely and directly (peer-to-peer) between your device and the person you are communicating with over your local Wi-Fi network. This data never touches the internet and is never routed through our servers.</li>
+      <li><strong>Profile Data:</strong> Your chosen display name and a randomly generated device ID are stored <strong>locally</strong> on your device's storage. They are only broadcasted to other nearby users on your specific Wi-Fi network to identify you for incoming calls.</li>
+      <li><strong>Call History:</strong> Your recent call logs are stored exclusively on your device's local storage.</li>
+    </ul>
+  </div>
+
+  <!-- 4. Third-Party Services & Ads -->
+  <div class="section" id="s4">
+    <h2><span class="num">4</span> Third-Party Services & Ads</h2>
+    <p>Because our App is designed to function entirely offline without internet connectivity:</p>
+    <ul>
+      <li>We do <strong>not</strong> use any third-party analytics trackers.</li>
+      <li>We do <strong>not</strong> display any advertisements (e.g., Google AdMob).</li>
+      <li>We do <strong>not</strong> include any in-app purchases or third-party authentication services.</li>
+    </ul>
+  </div>
+
+  <!-- 5. Data Security -->
+  <div class="section" id="s5">
+    <h2><span class="num">5</span> Data Security</h2>
+    <p>All communication (voice and chat) occurs over your local Wi-Fi router. The security of your communication depends on the security of your local Wi-Fi network (e.g., WPA2/WPA3 encryption). We recommend using trusted, password-protected Wi-Fi networks when using the App.</p>
+  </div>
+
+  <!-- 6. Children's Privacy -->
+  <div class="section" id="s6">
+    <h2><span class="num">6</span> Children's Privacy</h2>
+    <p>The App is rated for general audiences. Because the App operates entirely offline and does not collect or transmit personal information to external servers, it is safe for all ages. We do not knowingly collect personal information from children under 13 years of age.</p>
+  </div>
+
+  <!-- 7. Data Retention & Deletion -->
+  <div class="section" id="s7">
+    <h2><span class="num">7</span> Data Retention & Deletion</h2>
+    <p>Because we do not store any of your data on external servers, you have complete control over your data.</p>
+    <p><strong>To delete all data associated with the App:</strong></p>
+    <ul>
+      <li>You can clear your call history at any time from within the App's Settings tab.</li>
+      <li>Uninstalling the App from your device will permanently delete all local data, including your profile name, device identity, and call history.</li>
+    </ul>
+  </div>
+
+  <!-- 8. Changes -->
+  <div class="section" id="s8">
+    <h2><span class="num">8</span> Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Effective" date. We encourage you to review this policy periodically.</p>
+  </div>
+
+  <!-- 9. Contact -->
+  <div class="section" id="s9">
+    <h2><span class="num">9</span> Contact Us</h2>
+    <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
+    <ul>
+      <li><strong>Developer:</strong> SCB Tech Solution (Susan Chikanbanjar)</li>
+      <li><strong>Email:</strong> <a href="mailto:scbtechsolution@gmail.com" style="color: #93c5fd;">[scbtechsolution@gmail.com]</a></li>
+      <li><strong>Location:</strong> Lalitpur, Nepal</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>WiFi Calling - No Internet by SCB Tech Solution</p>
+    <p style="margin-top: 0.35rem;"><a href="mailto:scbtechsolution@gmail.com">Contact Support</a></p>
+    <p style="margin-top: 0.35rem;">Last updated: July 2026</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
