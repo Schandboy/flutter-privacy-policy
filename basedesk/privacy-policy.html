@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — TicTacToe</title>
+<title>Privacy Policy - BaseDesk: Firebase Support</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -13,9 +13,10 @@
     --border: #2a2d3a;
     --text: #e8e9ed;
     --text-muted: #8b8fa3;
-    --accent: #6366f1;
-    --accent-soft: rgba(99, 102, 241, 0.08);
-    --accent-border: rgba(99, 102, 241, 0.2);
+    --accent: #6E7BF2;
+    --accent-light: #b4bcfb;
+    --accent-soft: rgba(110, 123, 242, 0.08);
+    --accent-border: rgba(110, 123, 242, 0.22);
     --radius: 12px;
   }
 
@@ -46,14 +47,14 @@
   .app-icon {
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #4C5BC4, #29B6F6);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.25rem;
     font-size: 1.75rem;
-    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.25);
+    box-shadow: 0 8px 32px rgba(76, 91, 196, 0.3);
   }
 
   .header h1 {
@@ -75,7 +76,7 @@
     padding: 0.35rem 0.85rem;
     border-radius: 20px;
     font-size: 0.8rem;
-    color: #a5b4fc;
+    color: var(--accent-light);
     margin-top: 0.75rem;
   }
 
@@ -101,7 +102,7 @@
   .section h2 .num {
     background: var(--accent-soft);
     border: 1px solid var(--accent-border);
-    color: #a5b4fc;
+    color: var(--accent-light);
     width: 1.6rem;
     height: 1.6rem;
     border-radius: 50%;
@@ -143,6 +144,19 @@
     font-weight: 700;
   }
 
+  .section a { color: var(--accent-light); text-decoration: underline; text-underline-offset: 2px; }
+
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.8rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.05rem 0.35rem;
+    word-break: break-all;
+  }
+
   /* Data table */
   .data-table {
     width: 100%;
@@ -175,6 +189,8 @@
     background: rgba(255,255,255,0.01);
   }
 
+  .table-scroll { overflow-x: auto; }
+
   /* Highlight box */
   .highlight {
     background: var(--accent-soft);
@@ -185,7 +201,7 @@
   }
 
   .highlight p {
-    color: #a5b4fc;
+    color: var(--accent-light);
     font-size: 0.85rem;
     font-weight: 500;
     margin: 0;
@@ -221,7 +237,7 @@
   .toc a:hover { color: var(--accent); }
 
   .toc a span {
-    color: #a5b4fc;
+    color: var(--accent-light);
     font-weight: 600;
     margin-right: 0.5rem;
     font-size: 0.8rem;
@@ -255,210 +271,220 @@
 <div class="container">
 
   <div class="header">
-    <div class="app-icon">🎮</div>
+    <div class="app-icon">🎧</div>
     <h1>Privacy Policy</h1>
-    <p>TicTacToe</p>
-    <div class="effective-date">Effective: April 26, 2026</div>
+    <p>BaseDesk: Firebase Support</p>
+    <div class="effective-date">Effective: September 23, 2026</div>
   </div>
 
   <!-- TOC -->
   <div class="toc">
     <h3>Contents</h3>
     <a href="#s1"><span>01</span> Introduction</a>
-    <a href="#s2"><span>02</span> Information We Collect</a>
-    <a href="#s3"><span>03</span> How We Use Your Information</a>
-    <a href="#s4"><span>04</span> Third-Party Services</a>
-    <a href="#s5"><span>05</span> Advertising</a>
-    <a href="#s6"><span>06</span> In-App Purchases</a>
-    <a href="#s7"><span>07</span> Data Security</a>
-    <a href="#s8"><span>08</span> Children's Privacy</a>
-    <a href="#s9"><span>09</span> Data Retention & Deletion</a>
-    <a href="#s10"><span>10</span> Your Rights</a>
-    <a href="#s11"><span>11</span> Changes to This Policy</a>
-    <a href="#s12"><span>12</span> Contact Us</a>
+    <a href="#s2"><span>02</span> Google Account Access We Request</a>
+    <a href="#s3"><span>03</span> What Stays On Your Device</a>
+    <a href="#s4"><span>04</span> What The App Accesses In Your Google Account</a>
+    <a href="#s5"><span>05</span> Your Users' Data In Tickets</a>
+    <a href="#s6"><span>06</span> Google API Services And Limited Use</a>
+    <a href="#s7"><span>07</span> No Advertising, Analytics Or Tracking</a>
+    <a href="#s8"><span>08</span> Your Choices And Controls</a>
+    <a href="#s9"><span>09</span> Data Security</a>
+    <a href="#s10"><span>10</span> Children's Privacy</a>
+    <a href="#s11"><span>11</span> Data Retention And Deletion</a>
+    <a href="#s12"><span>12</span> Changes To This Policy</a>
+    <a href="#s13"><span>13</span> Contact Us</a>
   </div>
 
   <!-- 1. Introduction -->
   <div class="section" id="s1">
     <h2><span class="num">1</span> Introduction</h2>
-    <p><strong>Susan Chikanbanjar</strong> ("we", "our", or "us") operates the TicTacToe mobile application ("the App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App.</p>
-    <p>By downloading or using the App, you agree to the collection and use of information in accordance with this policy. If you do not agree, please do not use the App.</p>
+    <p><strong>SCB Tech Solution</strong> ("we", "our", or "us") operates the BaseDesk: Firebase Support application ("the App"). The App lets developers see their Firebase projects and run a support inbox for their own apps, using their own Google account. This Privacy Policy explains what the App accesses, what it does not, and the choices you have.</p>
+    <p>By downloading or using the App, you agree to the practices described in this policy. If you do not agree, please do not use the App.</p>
+    <div class="highlight">
+      <p><strong>In short:</strong> BaseDesk has no server of its own. After you sign in with Google, the App talks directly from your device to Google's APIs, and everything it reads or writes stays in your own Google Cloud and Firebase projects. We never receive your projects, your tickets, your account details or your access tokens. The App has no ads, no analytics and no crash reporting.</p>
+    </div>
   </div>
 
-  <!-- 2. Information We Collect -->
+  <!-- 2. Google account access -->
   <div class="section" id="s2">
-    <h2><span class="num">2</span> Information We Collect</h2>
+    <h2><span class="num">2</span> Google Account Access We Request</h2>
+    <p>When you sign in, Google asks you to grant the App the access below. Each is used only on your device, only for the purpose described, and only on projects your Google account can already reach.</p>
 
-    <p><strong>Information you provide directly:</strong></p>
-    <ul>
-      <li>Email address (when you create an account)</li>
-      <li>Display name or profile name (if provided)</li>
-    </ul>
-
-    <p><strong>Information collected automatically:</strong></p>
-    <ul>
-      <li>Device information (device model, operating system version)</li>
-      <li>Advertising ID (Google Advertising ID)</li>
-      <li>App usage data and interaction events</li>
-      <li>Crash logs and performance diagnostics</li>
-      <li>Approximate location (derived from IP address, not GPS)</li>
-    </ul>
-
-    <p><strong>Game data:</strong></p>
-    <ul>
-      <li>Game statistics (wins, losses, draws)</li>
-      <li>Achievement progress</li>
-      <li>Purchase status (premium/ad-free)</li>
-    </ul>
-  </div>
-
-  <!-- 3. How We Use Your Information -->
-  <div class="section" id="s3">
-    <h2><span class="num">3</span> How We Use Your Information</h2>
-    <p>We use the collected information for the following purposes:</p>
-
+    <div class="table-scroll">
     <table class="data-table">
       <thead>
         <tr>
-          <th>Purpose</th>
-          <th>Data Used</th>
+          <th>Access</th>
+          <th>Why it is needed</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Account creation & authentication</td>
-          <td>Email, authentication tokens</td>
+          <td>Your name and email address</td>
+          <td>To show which Google account is connected. Provided by Google Sign-In and kept on your device only.</td>
         </tr>
         <tr>
-          <td>Providing the game experience</td>
-          <td>Game stats, achievements, preferences</td>
+          <td>View your Firebase projects<br><code>firebase.readonly</code></td>
+          <td>To list your Firebase projects and show their name, project ID, region and storage bucket. Read only; the App never changes a project's settings.</td>
         </tr>
         <tr>
-          <td>Displaying advertisements</td>
-          <td>Advertising ID, device info, approximate location</td>
+          <td>View your Google Cloud data<br><code>cloud-platform.read-only</code></td>
+          <td>To read project details and the names of the Firestore collections in each project, so the App can show collection counts and let you choose where tickets are kept. Read only.</td>
         </tr>
         <tr>
-          <td>Processing in-app purchases</td>
-          <td>Purchase tokens (handled by Google Play)</td>
+          <td>View and manage your Firestore data<br><code>datastore</code></td>
+          <td>To read and write support tickets in the single collection you choose as your ticket store: loading tickets, sending replies, and changing status or priority. The App does not write to any other collection.</td>
         </tr>
         <tr>
-          <td>App improvement & bug fixing</td>
-          <td>Crash logs, performance data, usage analytics</td>
+          <td>Manage your Cloud Storage data<br><code>devstorage.read_write</code></td>
+          <td>To upload files you attach to a ticket, into the storage bucket of your ticket-store project. The App uploads only files you pick yourself.</td>
         </tr>
       </tbody>
     </table>
-  </div>
-
-  <!-- 4. Third-Party Services -->
-  <div class="section" id="s4">
-    <h2><span class="num">4</span> Third-Party Services</h2>
-    <p>Our App uses the following third-party services, each with their own privacy policies:</p>
-    <ul>
-      <li><strong>Firebase Authentication</strong> — for user account management. <a href="https://firebase.google.com/support/privacy" style="color: #a5b4fc;">Privacy Policy</a></li>
-      <li><strong>Cloud Firestore</strong> — for storing game data and user profiles. <a href="https://firebase.google.com/support/privacy" style="color: #a5b4fc;">Privacy Policy</a></li>
-      <li><strong>Google AdMob</strong> — for serving advertisements. <a href="https://policies.google.com/privacy" style="color: #a5b4fc;">Privacy Policy</a></li>
-      <li><strong>Google Play Billing</strong> — for processing in-app purchases. <a href="https://policies.google.com/privacy" style="color: #a5b4fc;">Privacy Policy</a></li>
-      <li><strong>Firebase Crashlytics</strong> — for crash reporting and diagnostics. <a href="https://firebase.google.com/support/privacy" style="color: #a5b4fc;">Privacy Policy</a></li>
-    </ul>
-    <p>These services may collect information used to identify you. We encourage you to review their respective privacy policies.</p>
-  </div>
-
-  <!-- 5. Advertising -->
-  <div class="section" id="s5">
-    <h2><span class="num">5</span> Advertising</h2>
-    <p>The App displays advertisements provided by Google AdMob. AdMob may use your Advertising ID and device information to serve personalized ads.</p>
-    <p><strong>You can control ad personalization:</strong></p>
-    <ul>
-      <li>On your Android device, go to <strong>Settings → Google → Ads</strong> to opt out of personalized advertising</li>
-      <li>Purchase the ad-free version through our in-app purchase option to remove all ads entirely</li>
-    </ul>
-
-    <div class="highlight">
-      <p>Premium users who have purchased ad-free access will not be shown any advertisements, and no ad-related data will be collected for them.</p>
     </div>
+
+    <p>On your device, the App uses the internet to reach Google's APIs. It opens your device's file picker only when you choose to attach a file, and reads only the file you select. It does not request access to your contacts, location, camera or microphone.</p>
   </div>
 
-  <!-- 6. In-App Purchases -->
+  <!-- 3. Stays on device -->
+  <div class="section" id="s3">
+    <h2><span class="num">3</span> What Stays On Your Device</h2>
+    <p>The following is stored in the App's local storage on your device, and never reaches us:</p>
+    <ul>
+      <li><strong>Your sign-in session.</strong> Held by Google Sign-In on your device. Access tokens are used only to call Google's APIs and are never sent to us.</li>
+      <li><strong>Your ticket store choice.</strong> Which project holds your tickets, and, if you link an existing collection, which collection it is and how its fields are mapped.</li>
+      <li><strong>Starred projects.</strong> The projects you have starred for quick access.</li>
+      <li><strong>Canned replies.</strong> The saved reply templates you use in conversations.</li>
+    </ul>
+  </div>
+
+  <!-- 4. What the App accesses -->
+  <div class="section" id="s4">
+    <h2><span class="num">4</span> What The App Accesses In Your Google Account</h2>
+    <p>This is everything the App reads from or writes to your Google account. All of it moves only between your device and Google, and stays inside your own projects. None of it is sent to us or to any third party.</p>
+
+    <div class="table-scroll">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>What</th>
+          <th>How it is used</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Firebase project details</td>
+          <td>Read from the Firebase Management API to show your project list. Displayed in the App only.</td>
+        </tr>
+        <tr>
+          <td>Firestore collection names</td>
+          <td>Read to show how many collections each project has, and to let you pick a collection as your ticket store. The App does not read the documents in these collections.</td>
+        </tr>
+        <tr>
+          <td>Support tickets</td>
+          <td>Read from, and written to, only the ticket collection you choose. Includes each ticket's subject, status, priority, requester details, messages and internal notes.</td>
+        </tr>
+        <tr>
+          <td>Attachments</td>
+          <td>Files you attach are uploaded to your ticket-store project's Cloud Storage bucket, under a <code>basedesk/</code> folder.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p>We do not collect, store, sell or share any of this information, and we do not use it to build a profile of you.</p>
+  </div>
+
+  <!-- 5. Your users' data -->
+  <div class="section" id="s5">
+    <h2><span class="num">5</span> Your Users' Data In Tickets</h2>
+    <p>Tickets may contain personal information about the people who contact your support: for example their email address, user ID, device details, and what they wrote to you.</p>
+    <p>That information lives in your own Firebase project. You are responsible for it, as the controller of your users' data, and for telling your users how you handle it. BaseDesk is only a tool for viewing and answering it, and we never receive a copy.</p>
+    <p>If you use the optional ticket ingestion function included with BaseDesk, it is deployed into and runs in your own Firebase project. It sends nothing to us.</p>
+  </div>
+
+  <!-- 6. Limited Use -->
   <div class="section" id="s6">
-    <h2><span class="num">6</span> In-App Purchases</h2>
-    <p>The App offers a one-time in-app purchase to remove advertisements. All purchase transactions are processed entirely by <strong>Google Play Billing</strong>. We do not collect, process, or store any payment information such as credit card numbers.</p>
-    <p>We only receive a purchase confirmation token from Google Play to verify your premium status and remove ads from your experience.</p>
+    <h2><span class="num">6</span> Google API Services And Limited Use</h2>
+    <p>BaseDesk's use and transfer of information received from Google APIs to any other app will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+    <p>In particular, information obtained through Google APIs is:</p>
+    <ul>
+      <li>used only to provide the features described in this policy, which you can see in the App;</li>
+      <li>not transferred to anyone, except as needed to provide those features, to comply with the law, or as part of a merger or acquisition with your consent;</li>
+      <li>not used or transferred for advertising, including retargeting and personalised or interest-based ads;</li>
+      <li>not read by any person, except with your express permission for a specific support request, for security purposes, or to comply with the law.</li>
+    </ul>
   </div>
 
-  <!-- 7. Data Security -->
+  <!-- 7. No ads -->
   <div class="section" id="s7">
-    <h2><span class="num">7</span> Data Security</h2>
-    <p>We take the security of your data seriously and implement appropriate measures to protect it:</p>
-    <ul>
-      <li>All data transmitted between the App and our servers is encrypted using TLS/SSL</li>
-      <li>User authentication is handled securely through Firebase Authentication</li>
-      <li>Database access is protected by Firestore Security Rules restricting access to authorized users only</li>
-    </ul>
-    <p>However, no method of electronic transmission or storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee absolute security.</p>
+    <h2><span class="num">7</span> No Advertising, Analytics Or Tracking</h2>
+    <p>The App shows no advertising and contains no advertising, analytics or crash reporting software. It does not use an advertising identifier, and does not track you across other apps or websites.</p>
+    <p>The only service the App communicates with is Google, to sign you in and to reach your projects. Google processes that information under its own <a href="https://policies.google.com/privacy">Privacy Policy</a> and the terms of your Google Cloud and Firebase account.</p>
   </div>
 
-  <!-- 8. Children's Privacy -->
+  <!-- 8. Choices -->
   <div class="section" id="s8">
-    <h2><span class="num">8</span> Children's Privacy</h2>
-    <p>The App is rated for general audiences but is <strong>not specifically directed at children under 13</strong>. We do not knowingly collect personal information from children under 13 years of age.</p>
-    <p>If you are a parent or guardian and believe your child has provided us with personal information, please contact us. If we discover that a child under 13 has provided us with personal data, we will take steps to delete that information promptly.</p>
+    <h2><span class="num">8</span> Your Choices And Controls</h2>
+    <ul>
+      <li><strong>Choose what the App can reach.</strong> The App only sees projects that your Google account already has permission to access. You control that with the roles you grant in Google Cloud.</li>
+      <li><strong>Choose where tickets live.</strong> In Settings you pick the one project and collection used as your ticket store, and you can change or clear it at any time.</li>
+      <li><strong>Disconnect.</strong> Settings, Disconnect signs you out of the App on this device.</li>
+      <li><strong>Revoke access completely.</strong> To remove the App's access to your Google account, visit <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, choose BaseDesk and remove access.</li>
+    </ul>
   </div>
 
-  <!-- 9. Data Retention & Deletion -->
+  <!-- 9. Security -->
   <div class="section" id="s9">
-    <h2><span class="num">9</span> Data Retention & Deletion</h2>
-    <p>We retain your personal data only for as long as your account is active or as needed to provide you with the App's services.</p>
-    <p><strong>When you delete your account, the following data is permanently removed:</strong></p>
-    <ul>
-      <li>Account information (name, email, profile photo)</li>
-      <li>Achievement progress and game statistics</li>
-      <li>All Firestore documents associated with your user ID</li>
-    </ul>
-    <p><strong>You can delete your account by:</strong></p>
-    <ul>
-      <li>In-app: Tap the profile icon → Delete Account → Confirm</li>
-      <li>Web: Visit our <a href="delete-account.html" style="color: #a5b4fc;">Account Deletion page</a></li>
-      <li>Email: Contact us at <strong>[scbtechsolution@gmail.com]</strong></li>
-    </ul>
-    <p>Account deletion is processed within 30 days of the request. Anonymized, aggregated data that cannot be linked to your identity may be retained for analytics purposes.</p>
+    <h2><span class="num">9</span> Data Security</h2>
+    <p>Everything the App sends and receives travels directly between your device and Google's APIs, and is encrypted in transit with HTTPS.</p>
+    <p>Access to your data is enforced by Google: each request is checked against the permissions of your Google account, so the App can never reach more than you can. Your access tokens are held by Google Sign-In on your device and are never sent to us.</p>
+    <p>Keep your device locked, and disconnect the App on shared devices, since anyone using your unlocked device could open your ticket inbox.</p>
   </div>
 
-  <!-- 10. Your Rights -->
+  <!-- 10. Children -->
   <div class="section" id="s10">
-    <h2><span class="num">10</span> Your Rights</h2>
-    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
-    <ul>
-      <li><strong>Access</strong> — request a copy of the data we hold about you</li>
-      <li><strong>Correction</strong> — request correction of inaccurate data</li>
-      <li><strong>Deletion</strong> — request deletion of your personal data</li>
-      <li><strong>Portability</strong> — request your data in a machine-readable format</li>
-      <li><strong>Opt-out</strong> — opt out of personalized advertising</li>
-    </ul>
-    <p>To exercise any of these rights, please contact us using the details in the Contact section below.</p>
+    <h2><span class="num">10</span> Children's Privacy</h2>
+    <p>The App is a tool for developers and businesses, and is not directed at children under 13. We do not knowingly collect personal information from children, and the App collects no personal information for us from anyone.</p>
   </div>
 
-  <!-- 11. Changes -->
+  <!-- 11. Retention -->
   <div class="section" id="s11">
-    <h2><span class="num">11</span> Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Effective" date. We encourage you to review this policy periodically.</p>
-    <p>Continued use of the App after any changes constitutes your acceptance of the updated policy.</p>
+    <h2><span class="num">11</span> Data Retention And Deletion</h2>
+    <p>Anything held on your device stays under your control:</p>
+    <ul>
+      <li>Clear your ticket store choice at any time from the Settings tab.</li>
+      <li>Uninstalling the App permanently deletes all of its local data, including your ticket store choice, collection mapping, starred projects and canned replies.</li>
+    </ul>
+    <p>Data in your Google account is kept for as long as you keep it there:</p>
+    <ul>
+      <li>Deleting a ticket in the App deletes it, and its messages, from your Firestore collection.</li>
+      <li>Attachments stay in your project's Cloud Storage bucket until you delete them from the Firebase or Google Cloud console.</li>
+    </ul>
+    <p>Because we never receive any of your data, there is nothing for us to retain or delete on our side.</p>
   </div>
 
-  <!-- 12. Contact -->
+  <!-- 12. Changes -->
   <div class="section" id="s12">
-    <h2><span class="num">12</span> Contact Us</h2>
-    <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
+    <h2><span class="num">12</span> Changes To This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date. We encourage you to review this policy periodically.</p>
+  </div>
+
+  <!-- 13. Contact -->
+  <div class="section" id="s13">
+    <h2><span class="num">13</span> Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy or our data practices, please contact us:</p>
     <ul>
-      <li><strong>Developer:</strong> Susan Chikanbanjar</li>
-      <li><strong>Email:</strong> <a href="mailto:scbtechsolution@gmail.com" style="color: #a5b4fc;">[scbtechsolution@gmail.com]</a></li>
-      <li><strong>Location:</strong> Lalitpur, Nepal</li>
+      <li><strong>Developer:</strong> SCB Tech Solution (Susan Chikanbanjar)</li>
+      <li><strong>Email:</strong> <a href="mailto:scbtechsolution@gmail.com">scbtechsolution@gmail.com</a></li>
+      <li><strong>Location:</strong> Bhaktapur, Nepal</li>
     </ul>
   </div>
 
   <footer>
-    <p>TicTacToe by Susan Chikanbanjar</p>
-    <p style="margin-top: 0.35rem;"><a href="delete-account.html">Delete Account</a> · <a href="mailto:scbtechsolution@gmail.com">Contact Support</a></p>
-    <p style="margin-top: 0.35rem;">Last updated: April 2026</p>
+    <p>BaseDesk: Firebase Support by SCB Tech Solution</p>
+    <p style="margin-top: 0.35rem;"><a href="mailto:scbtechsolution@gmail.com">Contact Support</a></p>
+    <p style="margin-top: 0.35rem;">Last updated: September 2026</p>
   </footer>
 
 </div>
